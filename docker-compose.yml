@@ -1,0 +1,13 @@
+version: '3'
+services:
+  python-app:
+    build: ./pythonprg        # Updated folder name
+    container_name: python_container1
+    ports:
+      - "5000:5000"
+
+  java-app:
+    build: ./javaprg          # Updated folder name
+    container_name: java_container1
+    depends_on:
+      - python-app
